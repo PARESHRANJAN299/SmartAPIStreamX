@@ -1,0 +1,54 @@
+[
+  {
+    "apiName": "fakestore_products",
+    "authType": "none",
+    "relativeUrl": "products",
+    "sinkPath": "bronze/fakestore/products.json",
+    "supportsIncremental": false
+  },
+  {
+    "apiName": "dummyjson_products",
+    "authType": "none",
+    "relativeUrl": "products?limit=100&after={{last_load}}",
+    "sinkPath": "bronze/dummyjson/products.json",
+    "supportsIncremental": true,
+    "incrementalField": "createdAt"
+  },
+  {
+    "apiName": "universities_india",
+    "authType": "none",
+    "relativeUrl": "search?country=India",
+    "sinkPath": "bronze/universities/list.json",
+    "supportsIncremental": false
+  },
+  {
+    "apiName": "openlibrary_lovebooks",
+    "authType": "none",
+    "relativeUrl": "subjects/love.json?limit=10",
+    "sinkPath": "bronze/openlibrary/love.json",
+    "supportsIncremental": false
+  },
+  {
+    "apiName": "catfacts",
+    "authType": "none",
+    "relativeUrl": "facts?limit=10",
+    "sinkPath": "bronze/catfacts/facts.json",
+    "supportsIncremental": false
+  },
+  {
+    "apiName": "openweather_delhi",
+    "authType": "queryKey",
+    "relativeUrl": "data/2.5/weather?q=Delhi&appid=YOUR_API_KEY",
+    "sinkPath": "bronze/openweather/delhi.json",
+    "supportsIncremental": false
+  },
+  {
+    "apiName": "newsapi_topheadlines",
+    "authType": "bearer",
+    "relativeUrl": "v2/top-headlines?country=in&from={{last_load}}",
+    "bearerToken": "YOUR_NEWSAPI_TOKEN",
+    "sinkPath": "bronze/newsapi/topheadlines.json",
+    "supportsIncremental": true,
+    "incrementalField": "publishedAt"
+  }
+]
